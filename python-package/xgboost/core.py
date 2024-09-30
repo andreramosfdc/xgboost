@@ -2194,6 +2194,8 @@ class Booster:
         self._assign_dmatrix_features(dtrain)
 
         if fobj is None:
+            print("Print Iteration")
+            print(self.handle, dtrain.handle, iteration)
             _check_call(
                 _LIB.XGBoosterUpdateOneIter(
                     self.handle, ctypes.c_int(iteration), dtrain.handle
